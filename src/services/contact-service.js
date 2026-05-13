@@ -11,6 +11,16 @@ const service = {
         const db = await dbContacts();
         const data = await db.findOne(id);
         return data;
+    },
+    UpdateContact: async (id, payload) => {
+        const db = await dbContacts();
+        const data = await db.findOneAndUpdate({ _id: id }, { $set: payload }, { returnOriginal: false });
+        return data;
+    },
+    CreateContact: async (payload) => {
+        const db = await dbContacts();
+        const data = await db.insertOne(payload);
+        return data
     }
 }
 
