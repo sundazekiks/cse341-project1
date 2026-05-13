@@ -21,6 +21,17 @@ const service = {
         const db = await dbContacts();
         const data = await db.insertOne(payload);
         return data
+    },
+    DeleteContact: async (id) => {
+        try {
+            const db = await dbContacts();
+            const data = await db.findOneAndDelete({ _id: id });
+            return data;
+        }
+        catch (err) {
+            console.error(err);
+            return null;
+        }
     }
 }
 

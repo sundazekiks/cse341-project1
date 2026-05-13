@@ -122,6 +122,22 @@
             "description": "OK"
           }
         }
+      },
+      "delete": {
+        "description": "Delete a contact by its id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   }

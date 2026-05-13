@@ -50,5 +50,17 @@ const updateContact = async (req, res) => {
     }
 }
 
+const deleteContact = async (req, res) => {
+    // #swagger.description = 'Delete a contact by its id'
+    const id = new ObjectId(req.params.id)
 
-module.exports = { getAllContacts, getContact, updateContact, createContact };
+    try {
+        const c = await service.DeleteContact(id)
+        res.status(200).json({ cId: c?._id })
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+
+module.exports = { getAllContacts, getContact, updateContact, createContact, deleteContact };

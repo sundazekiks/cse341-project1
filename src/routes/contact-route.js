@@ -11,4 +11,6 @@ contact.post('/', contacts.createContact)
 
 contact.put('/:id', contacts.updateContact)
 
+contact.delete('/:id', contacts.deleteContact)
+
 module.exports = contact;
