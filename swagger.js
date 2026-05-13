@@ -1,11 +1,12 @@
 const swaggerAutogen = require('swagger-autogen')();
-
+const { config } = require('dotenv');
+config();
 const doc = {
     info: {
-        title: 'My API',
-        description: 'Description'
+        title: 'CSE341 API',
+        description: 'API for CSE341'
     },
-    host: 'localhost:8080',
+    host: process.env.PUBLISHED_WEB_URI || 'localhost:8080',
     schemes: ['http', 'https'],
 };
 
